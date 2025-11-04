@@ -1040,8 +1040,8 @@ async function generateMainMenu(chatId, userSetting, config) {
     categoryName = categoryResult.name;
   }
   const defaultNotification = 
-    "➡️ 现在您可以直接发送图片或文件，上传完成后会自动生成图床直链\n" +
-    "➡️ 所有上传的文件都可以在网页后台管理，支持删除、查看、分类等操作";
+  "➡️ 现在您可以直接发送图片或文件，上传完成后会自动生成图床直链"
+  "➡️ 所有上传的文件都可以在网页后台管理，支持删除、查看、分类等操作";
   const messageBody = `☁️ <b>图床助手v1</b>
   📂 当前存储：${storageText}
   📁 当前分类：${categoryName}
