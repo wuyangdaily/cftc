@@ -1049,10 +1049,10 @@ async function generateMainMenu(chatId, userSetting, config) {
   💾 已用空间：${formatSize(stats && stats.total_size ? stats.total_size : 0)}
   ${notificationText || defaultNotification}
   👇 请选择操作：`;
-  const keyboard = getKeyboardLayout(userSetting);
+  const keyboard = getKeyboardLayout(userSetting, config);
   return { messageBody, keyboard };
 }
-function getKeyboardLayout(userSetting) {
+function getKeyboardLayout(userSetting, config) {
   const storageType = userSetting.storage_type || 'telegram';
   return {
     inline_keyboard: [
@@ -1069,6 +1069,9 @@ function getKeyboardLayout(userSetting) {
         { text: "✏️ 修改后缀", callback_data: "edit_suffix_input" },
         { text: "🗑️ 删除文件", callback_data: "delete_file_input" }
       ],
+      [
+        { text: "📦 网页版后台", url: config.domain }
+      ]
     ]
   };
 }
@@ -4633,4 +4636,3 @@ try {
 } catch (error) {
   console.error('添加DOMContentLoaded事件监听器失败:', error);
 }
-  
