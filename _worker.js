@@ -1070,7 +1070,7 @@ function getKeyboardLayout(userSetting, config) {
         { text: "🗑️ 删除文件", callback_data: "delete_file_input" }
       ],
       [
-        { text: "📦 网页版后台", url: config.domain }
+        { text: "🔗 网页版后台", url: config.domain }
       ]
     ]
   };
