@@ -2184,7 +2184,7 @@ async function handleFileRequest(request, config) {
       file = await config.database.prepare('SELECT * FROM files WHERE file_name = ?').bind(fileName).first();
     }
     if (!file) {
-      return new Response('File not found', { status: 404 });
+      return new Response('文件已删除', { status: 404 });
     }
     if (file.storage_type === 'telegram') {
       try {
@@ -3056,13 +3056,10 @@ function generateUploadPage(categoryOptions, storageType) {
             <button onclick="copyUrls('url')">复制URL</button>
             <button onclick="copyUrls('markdown')">复制Markdown</button>
             <button onclick="copyUrls('html')">复制HTML</button>
-          </div>
-          <div class="copyright">
-            <span>© 2025 Copyright by <a href="https://github.com/iawooo/cftc" target="_blank">AWEI's GitHub</a> | <a href="https://awei.nyc.mn/" target="_blank">AWEI</a></span>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- 通用确认弹窗 -->
+        <!-- 通用确认弹窗 -->
       <div id="confirmModal" class="modal">
         <div class="modal-content">
           <h3 class="modal-title">提示</h3>
